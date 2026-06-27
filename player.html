@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Video | Vasanthan K Portfolio</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Dedicated styles for cinema player page */
+    .player-page {
+      padding-top: 100px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .back-btn-wrap {
+      margin-bottom: 2rem;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: var(--transition-fast);
+      font-family: var(--font-sans);
+    }
+    
+    .back-link:hover {
+      color: var(--accent-cyan);
+      transform: translateX(-4px);
+    }
+    
+    .cinema-container {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      margin-bottom: 3rem;
+    }
+    
+    .cinema-video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      margin-bottom: 6rem;
+    }
+    
+    .details-left h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    
+    .details-category {
+      font-family: var(--font-mono);
+      color: var(--accent-purple);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    
+    .details-desc {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    
+    .details-right {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-self: start;
+    }
+    
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    
+    .meta-lbl {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .meta-val {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .meta-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    
+    @media (max-width: 992px) {
+      .details-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .details-left h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Light Leak Effects -->
+  <div class="ambient-bg">
+    <div class="ambient-light-1"></div>
+    <div class="ambient-light-2"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header id="header" style="background: rgba(5, 5, 7, 0.95);">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"></div>
+        VASANTHAN<span>.K</span>
+      </a>
+      <nav>
+        <ul class="nav-links" style="display: flex;">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#works">Self-Work</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Player Main Container -->
+  <main class="container player-page">
+    <div class="back-btn-wrap">
+      <a href="index.html#works" class="back-link">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="transform: rotate(180deg);">
+          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+        </svg>
+        Back to Portfolio
+      </a>
+    </div>
+
+    <!-- Cinema Video Player -->
+    <div class="cinema-container">
+      <video id="playerVideo" class="cinema-video" controls autoplay playsinline>
+        <source id="videoSource" src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Project Details -->
+    <div class="details-grid">
+      <div class="details-left">
+        <h1 id="projectTitle">Loading Project...</h1>
+        <span class="details-category" id="projectCategory">Category</span>
+        <p class="details-desc" id="projectDesc">Project description goes here...</p>
+      </div>
+      
+      <div class="details-right">
+        <div class="meta-item">
+          <div class="meta-lbl">Role</div>
+          <div class="meta-val" id="projectRole">Video Editor</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-lbl">Project Type</div>
+          <div class="meta-val" id="projectClient">Self-Work Practice</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-lbl">Tools & Tech Stack</div>
+          <div class="meta-tags" id="projectTools">
+            <!-- Badges dynamically added -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="margin-top: auto;">
+    <div class="container footer-content">
+      <div class="footer-copyright">
+        &copy; 2026 VASANTHAN K. All Rights Reserved. Aspiring Video Editor.
+      </div>
+      <div class="footer-socials">
+        <a href="mailto:vasanthankasvk@gmail.com" class="social-link">Email</a>
+        <a href="#" class="social-link">Vimeo</a>
+        <a href="#" class="social-link">Instagram</a>
+        <a href="#" class="social-link">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Content Loader Script -->
+  <script>
+    const videosDb = [
+      {
+        title: "Kinetic Typography Promo",
+        category: "Motion Graphics / After Effects",
+        url: "assets/VASANTHANK_AE3.mp4",
+        desc: "A fluid and dynamic motion graphics piece designed entirely in Adobe After Effects. This concept promo showcases shape layering, vector graphics silhouettes, clean slide wipes, and synchronized kinetic typography based on values of learning, creating, and growing. It was designed to demonstrate keyframing precision, transitions pacing, and text matching.",
+        role: "Motion Designer / Graphic Editor",
+        client: "Self-Work Concept Project",
+        tools: ["After Effects", "Motion Design", "Kinetic Typography", "Vector Art"]
+      },
+      {
+        title: "Brand Monk Academy Promo",
+        category: "Promotional Reel / Premiere Pro",
+        url: "assets/PR_OUT.mp4",
+        desc: "A high-conversion social media promotional reel edited in Adobe Premiere Pro for Brand Monk Academy's webinar. Highlights include implementing a circular webcam picture-in-picture overlay, floating overlay cascades showing different career paths (students, technicians, IT employees), currency VFX drop details, and bold, high-impact captions designed for muted mobile scrolling.",
+        role: "Premiere Pro Video Editor",
+        client: "Practice Promo Reel",
+        tools: ["Premiere Pro", "Promotional Reel", "PIP Masks", "Social Captions"]
+      },
+      {
+        title: "FSSAI Food License Cut",
+        category: "Informational Edit / Premiere Pro",
+        url: "assets/VASANTHANK_PR-.mp4",
+        desc: "An engaging informational edit focused on food licence rules and penalties. This video exercises split-screen transitions, black-and-white style highlights (to convey warnings/serious messages), and clean overlay cards listing legal penalty ranges (50,000 to 5 lakhs) designed to keep viewers hooked and drive compliance signups.",
+        role: "Video Editor & Assembly Cut",
+        client: "Educational Practice Project",
+        tools: ["Premiere Pro", "Dialogue Cut", "B-roll Overlays", "B&W Color Swaps"]
+      },
+      {
+        title: "MehaTone Ayurvedic Ad",
+        category: "Healthcare Ad / Premiere Pro",
+        url: "assets/FinalOut3.mp4",
+        desc: "A commercial-style testimonial ad edit for MehaTone ayurvedic health supplement. Integrates interviews from Doctor Robin and his patient, medical charts (sugar index meter overlay), lifestyle B-rolls (smoking/drinking hazard alerts), manufacturing floor visuals, and digital call-to-actions. Demonstrates structured narrative assembly, pacing control, and product-focused marketing edits.",
+        role: "Ad Video Editor",
+        client: "Commercial Concept Project",
+        tools: ["Premiere Pro", "Healthcare Marketing", "Product Ad", "Interview Cuts"]
+      }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Parse query string for ?id=X
+      const urlParams = new URLSearchParams(window.location.search);
+      const videoId = parseInt(urlParams.get('id'));
+
+      // Validate ID bounds
+      if (isNaN(videoId) || videoId < 0 || videoId >= videosDb.length) {
+        // Redirect back if invalid parameter
+        window.location.href = 'index.html';
+        return;
+      }
+
+      const data = videosDb[videoId];
+
+      // Set titles & texts
+      document.title = `${data.title} | Watch | Vasanthan K Portfolio`;
+      document.getElementById('projectTitle').textContent = data.title;
+      document.getElementById('projectCategory').textContent = data.category;
+      document.getElementById('projectDesc').textContent = data.desc;
+      document.getElementById('projectRole').textContent = data.role;
+      document.getElementById('projectClient').textContent = data.client;
+
+      // Set video player details
+      const playerVideo = document.getElementById('playerVideo');
+      const videoSource = document.getElementById('videoSource');
+      videoSource.src = data.url;
+      playerVideo.load();
+
+      // Add tech stack tags
+      const projectTools = document.getElementById('projectTools');
+      data.tools.forEach(tool => {
+        const span = document.createElement('span');
+        span.className = 'tech-badge';
+        
+        // Match color patterns
+        if (tool === 'After Effects') span.classList.add('blue');
+        else if (tool === 'Premiere Pro') span.classList.add('purple');
+        else span.classList.add('cyan');
+        
+        span.textContent = tool;
+        projectTools.appendChild(span);
+      });
+    });
+  </script>
+</body>
+</html>
