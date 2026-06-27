@@ -27,7 +27,8 @@
       <nav>
         <ul class="nav-links">
           <li><a href="#hero">Home</a></li>
-          <li><a href="#works">Self-Work</a></li>
+          <li><a href="#works">Video Edits</a></li>
+          <li><a href="#designs">Photoshop Designs</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -82,12 +83,17 @@
               <div class="card-dot yellow"></div>
               <div class="card-dot green"></div>
             </div>
-            <div class="card-title">self_work_montage.mp4</div>
-            <div></div>
+            <div class="card-title">Vasanthan_K.mp4</div>
+            <button class="monitor-btn" id="heroMuteBtn" style="position: relative; z-index: 10; padding: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: none; border: none; color: var(--text-secondary); cursor: pointer;" aria-label="Mute Toggle">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16" id="heroMuteIcon">
+                <!-- Speaker with slash (muted by default) -->
+                <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zM13.5 8l2-2L14 4.5l-2 2-2-2L8.5 6l2 2-2 2 1.5 1.5 2-2 2 2 1.5-1.5-2-2z"/>
+              </svg>
+            </button>
           </div>
           <div class="preview-lens-media">
-            <video autoplay loop muted playsinline>
-              <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
+            <video id="heroVideo" autoplay loop muted playsinline style="pointer-events: none; width: 100%; height: 100%; object-fit: cover;">
+              <source src="https://media.githubusercontent.com/media/Vasanthank994499/video-editing-portfolio/master/assets/VKF.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -110,7 +116,7 @@
           <div class="portfolio-card">
             <div class="card-media">
               <video preload="metadata" loop playsinline muted>
-                <source src="assets/VASANTHANK_AE3.mp4" type="video/mp4">
+                <source src="https://media.githubusercontent.com/media/Vasanthank994499/video-editing-portfolio/master/assets/VASANTHANK_AE3.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div class="play-overlay">
@@ -142,7 +148,7 @@
           <div class="portfolio-card">
             <div class="card-media">
               <video preload="metadata" loop playsinline muted>
-                <source src="assets/PR_OUT.mp4" type="video/mp4">
+                <source src="https://media.githubusercontent.com/media/Vasanthank994499/video-editing-portfolio/master/assets/PR_OUT.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div class="play-overlay">
@@ -174,7 +180,7 @@
           <div class="portfolio-card">
             <div class="card-media">
               <video preload="metadata" loop playsinline muted>
-                <source src="assets/VASANTHANK_PR-.mp4" type="video/mp4">
+                <source src="https://media.githubusercontent.com/media/Vasanthank994499/video-editing-portfolio/master/assets/VASANTHANK_PR.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div class="play-overlay">
@@ -206,7 +212,7 @@
           <div class="portfolio-card">
             <div class="card-media">
               <video preload="metadata" loop playsinline muted>
-                <source src="assets/FinalOut3.mp4" type="video/mp4">
+                <source src="https://media.githubusercontent.com/media/Vasanthank994499/video-editing-portfolio/master/assets/FinalOut3.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div class="play-overlay">
@@ -228,6 +234,63 @@
                 <span class="tech-badge purple">Premiere Pro</span>
                 <span class="tech-badge blue">Ad Concept</span>
                 <span class="tech-badge cyan">Product Promo</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Graphic Design Showcase -->
+  <section id="designs" style="background-color: var(--bg-main);">
+    <div class="container">
+      <div style="text-align: center;">
+        <span class="section-tag">Photoshop & Graphic Design</span>
+        <h2 class="section-title">Creative Banner & Poster Designs</h2>
+        <p class="section-desc" style="margin: 0 auto 4rem;">A collection of advertising banners and workshop posters designed using Photoshop, focusing on typography layout and color compositing.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <!-- Design Card 1 -->
+        <a href="assets/VasanthanK_BannerDesign.png" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+          <div class="portfolio-card">
+            <div class="card-media">
+              <img src="assets/VasanthanK_BannerDesign.png" alt="Digital Marketing Course Banner" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="card-info">
+              <div class="card-meta-row">
+                <span class="card-category">Banner Design</span>
+                <span class="card-role">Self-Work Concept</span>
+              </div>
+              <h3 class="card-title-text">Digital Marketing Campaign Banner</h3>
+              <p class="card-desc">An advertising banner designed for Brand Monk. Showcases deep contrast color balancing (blue and orange), floating social badges, corporate laptop overlays, and enrollment calls to action.</p>
+              <div class="card-tech-stack">
+                <span class="tech-badge blue">Photoshop</span>
+                <span class="tech-badge cyan">Graphic Design</span>
+                <span class="tech-badge purple">Ad Banner</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Design Card 2 -->
+        <a href="assets/VasanthanK_PosterDesign.png" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+          <div class="portfolio-card">
+            <div class="card-media">
+              <img src="assets/VasanthanK_PosterDesign.png" alt="Design Workshop Poster" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="card-info">
+              <div class="card-meta-row">
+                <span class="card-category">Poster Design</span>
+                <span class="card-role">Self-Work Concept</span>
+              </div>
+              <h3 class="card-title-text">Graphic Design Workshop Poster</h3>
+              <p class="card-desc">A promotional event poster designed for a masterclass. Highlights structured layout alignments, custom grid backgrounds, gold script typographic contrasts, and navy diagonal headers.</p>
+              <div class="card-tech-stack">
+                <span class="tech-badge blue">Photoshop</span>
+                <span class="tech-badge cyan">Poster Design</span>
+                <span class="tech-badge purple">Event Promo</span>
               </div>
             </div>
           </div>
